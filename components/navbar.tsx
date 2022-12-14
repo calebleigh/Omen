@@ -21,7 +21,9 @@ const Navbar = () => {
 
           <div className="absolute flex justify-between min-w-full h-14 transition-all duration-5000 mt-0 md:-mt-96 duration-1000">
             <div className="pl-10 pt-2">
-              <img className="h-auto w-10" src="Omen.png" alt="" /> 
+            {scrollPosition > 0 ? <img className="h-auto w-10" src="omen-blue.png" alt="" /> : <img className="h-auto w-10" src="omen-white.png" alt="" /> }
+               
+              
             </div>            
             <div className={`text-white pt-3 pr-10 text-3xl transition-all duration-5000 mt-0 md:-mt-96 duration-1000
                             ${scrollPosition > 0 ? 'text-blue' : 'text-white '}`}>
