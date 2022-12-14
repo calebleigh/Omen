@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/navbar'
 import styles from '../styles/Home.module.css'
 import { SiAdobecreativecloud, SiAdobelightroom, SiAdobephotoshop, SiAdobeillustrator, SiFigma, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss } from 'react-icons/si'
@@ -17,6 +17,8 @@ export default function Home() {
     return () => window.removeEventListener("scroll", updatePosition);
   }, []);
 
+  
+
   return (
     <div className=' bg-orange-600'>
       <Head>
@@ -25,26 +27,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar/>
-      <section className={` object-cover bg-transparent min-h-screen min-w-full grid place-items-center relative`}>
- 
-                 
+      <section className={`Section1 object-cover bg-transparent min-h-[70vh] md:min-h-screen min-w-full grid place-items-center relative transition-all duration-500 ${scrollPosition > 0 ? 'mb-0' : ' mb-12'}`}>
 
-          <div className={`flex transition-all duration-500 bg-gray absolute ${scrollPosition > 0 ? ' w-[90vw] h-[80vh] rounded-3xl' : 'h-screen w-full'}`}>
+          <div className={`grid transition-all duration-500 bg-gray absolute ${scrollPosition > 0 ? ' w-[90%] h-[80%] rounded-3xl' : 'h-full w-full'} md:flex`}>
 
-                    <video autoPlay muted loop playsInline id="intro" className={`absolute object-cover ${scrollPosition > 0 ? ' h-full w-full rounded-3xl' : 'h-full w-full'}`}>
+                    <video autoPlay muted loop playsInline id="intro" className={`invisible md:visible absolute object-cover ${scrollPosition > 0 ? ' h-full w-full rounded-3xl' : 'h-full w-full'}`}>
                       <source src="intro.mp4" type="video/mp4"></source>
                     </video>
                     
-            <div className={`flex-1 grid content-center justify-center pl-20 z-30`}>
+                    <img className={`absolute object-cover w-full ${scrollPosition > 0 ? ' h-full w-full rounded-3xl' : 'h-full w-full'} md:invisible `} src='omenbg.png'></img>
+
+            <div className={`flex-1 grid content-center justify-center pl-20 pr-20 z-30`}>
               <h2 className={` text-white text-5xl font-bold`}>
                 An online experience like no other.
               </h2>
               <p  className={` text-gray-light text-2xl pt-10`}>
                 The digital world is rapidly growing. We will worry about that. You focus on what is important to you.
               </p>
+              
             </div>
-           <div  className={`flex-1 grid content-center justify-center`}> 
-            {/*   <img src="landing-image.png" alt="landing image" className=''/>*/}
+
+            <div className={`flex-0 absolute md:flex-1 md:relative`}>
+                
             </div>
           </div>          
 
@@ -54,13 +58,13 @@ export default function Home() {
 
       <section className=" bg-white min-w-full  grid place-items-center">
         <div className="grid place-items-center">
-            <h2 className=" text-blue text-3xl font-bold w-6/12 text-center">
+            <h2 className=" text-blue text-3xl font-bold text-center md:">
               Omen Digital is a online content management agency.
             </h2>
-            <p  className={` text-blue text-2xl pt-10 w-6/12 text-center`}>
-                With Maven, we will take care of all your online content. We create clean, professional content for your social media and websites.
+            <p  className={` text-blue text-2xl pt-10 text-center w-10/12 md:w-6/12`}>
+                With Omen, we will take care of all your online content. We create clean, professional content for your social media and websites.
             </p>
-            <p className={` text-gray text-l pt-16 w-10/12 text-center font-bold`}>
+            <p className={` text-gray text-l pt-12 w-10/12 text-center font-bold`}>
               Here are some tools we use to help you.
             </p>
             <p  className={`flex min-w-full text-gray text-3xl pl-10 pr-10 pt-10 pb-20 justify-between`}>
@@ -97,8 +101,9 @@ export default function Home() {
 
 
 
-      <section className=" bg-blue min-h-screen min-w-full">
-            <h2 className=" text-white text-4xl font-bold underline">
+      <section className="grid place-items-center min-h-screen min-w-full relative bg-green">
+                <img className='absolute object-cover h-full w-full' src='omenbg.png'></img>
+            <h2 className=" z-10 text-white text-4xl font-bold underline">
               Hello world!
             </h2>
       </section>

@@ -18,3 +18,28 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* SCROLLBAR */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  margin-top: -5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(68,31,124);
+  background: linear-gradient(10deg, rgba(68,31,124,1) 0%, rgba(88,15,76,1) 100%);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(77, 5, 100); 
+}
